@@ -1,0 +1,70 @@
+name: image_icons_app
+description: "A new Flutter project."
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  intl: ^0.19.0
+  url_launcher: ^6.1.12
+  device_preview: ^1.2.0
+
+  flutter_native_splash: ^2.3.10
+
+  get: ^4.6.6
+  fluttertoast: ^8.2.8
+  logger: ^2.5.0
+  connectivity_plus: ^6.1.1
+  shimmer: ^3.0.0
+  iconsax_flutter: ^1.0.0
+  icons_plus: ^5.0.0
+  lottie: ^3.2.0
+  # flutter_screenutil: ^5.9.3
+  # rive: ^0.13.20
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/rive/
+
+# . sha cmd:  keytool -list -v -keystore "C:\Users\khand\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/logos/style-hub-splash-logo-black.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/logos/logo_foreground.png"
+
+  # dart run flutter_launcher_icons:main
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  color_dark: "#272727"
+  image: assets/logos/style-hub-splash-logo-black.png
+  image_dark: assets/logos/style-hub-splash-logo-white.png
+
+  android_12:
+    color: "#FFFFFF"
+    color_dark: "#272727"
+    image: assets/logos/style-hub-splash-logo-black.png
+    image_dark: assets/logos/style-hub-splash-logo-white.png
+
+  web: false
+
+  # dart run flutter_native_splash:create --path=pubspec.yaml
+  # dart run flutter_native_splash:remove
