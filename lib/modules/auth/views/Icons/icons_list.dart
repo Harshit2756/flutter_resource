@@ -2676,3 +2676,6 @@ const bootstrapIcons = [
   [Bootstrap.zoom_in, 'zoom_in'],
   [Bootstrap.zoom_out, 'zoom_out'],
 ];
+
+const FontAwesomeIconsList = [
+];

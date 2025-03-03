@@ -22,7 +22,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'Image Icons App',
       theme: HAppTheme.lightTheme,
       home: const SplashView(),
       defaultTransition: Transition.fadeIn,

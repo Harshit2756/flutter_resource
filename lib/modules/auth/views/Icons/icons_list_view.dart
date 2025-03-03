@@ -83,10 +83,6 @@ class IconsListViewState extends State<IconsListView> {
                 itemCount: controller.filteredIcons.length,
                 itemBuilder: (context, index) {
                   final item = controller.filteredIcons[index];
-                  final isIconsax = item.key.startsWith('i_');
-                  final clipBoardValue = isIconsax
-                      ? 'Iconsax.${item.key}'
-                      : 'AntDesign.${item.key}';
 
                   return FeatureCard(
                     color: selectedColor,
@@ -94,7 +90,7 @@ class IconsListViewState extends State<IconsListView> {
                     title: item.key.replaceAll('i_', ''),
                     icon: item.value,
                     onTap: () {
-                      _copyToClipboard(context, item, clipBoardValue);
+                      _copyToClipboard(context, item);
                     },
                   );
                 },
@@ -117,25 +113,27 @@ class IconsListViewState extends State<IconsListView> {
     super.dispose();
   }
 
-  void _copyToClipboard(BuildContext context, MapEntry<String, IconData> item,
-      String clipBoardValue) {
-    Clipboard.setData(ClipboardData(text: clipBoardValue));
-    ScaffoldMessenger.of(context).clearSnackBars();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Row(
-          children: [
-            Icon(
-              item.value,
-              size: 34,
-              color: selectedColor,
-            ),
-            const SizedBox(width: 8),
-            Text('$clipBoardValue added to ClipBoard'),
-          ],
+  void _copyToClipboard(BuildContext context, MapEntry<String, IconData> item) {
+    String clipBoardValue = item.key;
+
+    Clipboard.setData(ClipboardData(text: clipBoardValue)).then((_) {
+      ScaffoldMessenger.of(context).clearSnackBars();
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Row(
+            children: [
+              Icon(
+                item.value,
+                size: 34,
+                color: selectedColor,
+              ),
+              const SizedBox(width: 8),
+              Text('$clipBoardValue added to ClipBoard'),
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 
   void _scrollToTop() {

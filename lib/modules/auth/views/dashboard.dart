@@ -7,6 +7,7 @@ import '../../../shared/utils/media/icons_strings.dart';
 import '../../../shared/utils/media/text_strings.dart';
 import '../../../shared/widgets/appbar/custom_appbar.dart';
 import '../../../shared/widgets/cards/feature_card.dart';
+import 'Icons/fontawesome/font_awesome_screen.dart';
 import 'Icons/icons_list_view.dart';
 
 class DashboardView extends StatelessWidget {
@@ -48,6 +49,13 @@ class DashboardView extends StatelessWidget {
                 icon: Iconsax.activity,
                 onTap: () {
                   Get.to(() => const IconsListView());
+                },
+              ),
+              FeatureCard(
+                title: "FontAwesome Icons",
+                icon: Iconsax.activity,
+                onTap: () {
+                  Get.to(() => const FontAwesomeGalleryHome());
                 },
               ),
               // FeatureCard(
